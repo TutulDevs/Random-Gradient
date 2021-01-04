@@ -42,7 +42,7 @@ class App extends Component {
       <div 
         className="App" 
         style={style}>
-          
+          <h1>Random Gradient Generator</h1>
           <Box 
             click={this.displayColor}
             gradientCol={property} />
