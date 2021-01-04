@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import './App.css'
+import Box from "./Box/Box";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  state = {
+    colOne: '#4c5d56',
+    colTwo: '#099b6f',
+    deg: 235
+  }
+
+  randomHex = () => {
+    const letters = '0123456789abcdef' ;
+    let color = '#' ;
+    for(let i = 0; i < 6; i++){
+      color+= letters[Math.floor(Math.random() * 16)];
+    }
+    return color ;
+  }
+
+  displayColor = () => {
+    const col1 = this.randomHex() ;
+    const col2 = this.randomHex() ;
+    let degree = Math.floor(Math.random() * 360) ;
+
+    this.setState({
+      colOne: col1, 
+      colTwo: col2, 
+      deg: degree
+    }) ;
+  }
+
+
+  render() {
+    const property = `linear-gradient(${this.state.deg}deg, ${this.state.colOne}, ${this.state.colTwo})`
+    const style = {
+      background: `${property}`
+    }
+ 
+    return (
+      <div 
+        className="App" 
+        style={style}>
+          
+          <Box 
+            click={this.displayColor}
+            gradientCol={property} />
+
+      </div>
+    );
+  }
 }
 
-export default App;
+export default App ;
