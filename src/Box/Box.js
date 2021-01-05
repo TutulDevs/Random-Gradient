@@ -7,9 +7,13 @@ const Box = (props) => {
             <button onClick={props.click}>
                 Generate
             </button>
-            <p 
-                title="Click to copy">
+            <p className="ColCode" title="Click to copy">
               background: {props.gradientCol};
+            </p>
+
+            <p className="Footer">
+                Made by  
+                <a href="https://twitter.com/TutulDevs"> Tutul</a>
             </p>
         </div>
     )

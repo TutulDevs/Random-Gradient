@@ -22,7 +22,7 @@ class App extends Component {
   displayColor = () => {
     const col1 = this.randomHex() ;
     const col2 = this.randomHex() ;
-    let degree = Math.floor(Math.random() * 360) ;
+    let degree = Math.floor(Math.random() * 721) -360 ;
 
     this.setState({
       colOne: col1, 
@@ -33,7 +33,8 @@ class App extends Component {
 
 
   render() {
-    const property = `linear-gradient(${this.state.deg}deg, ${this.state.colOne}, ${this.state.colTwo})`
+    const property = `linear-gradient(${this.state.deg}deg, ${this.state.colOne}, ${this.state.colTwo})` ;
+
     const style = {
       background: `${property}`
     }
@@ -43,9 +44,10 @@ class App extends Component {
         className="App" 
         style={style}>
           <h1>Random Gradient Generator</h1>
-          <Box 
-            click={this.displayColor}
-            gradientCol={property} />
+
+        <Box 
+          click={this.displayColor}
+          gradientCol={property} />
 
       </div>
     );
