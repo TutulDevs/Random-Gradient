@@ -12,10 +12,5 @@
   padding: 1rem;
   transform: translateY(25vh);
   color: #7af7b4;
-
-  background: -webkit-linear-gradient(0deg, #7af7b4, #ffffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
   text-shadow: 2px 2px 2px #33333338;
 }

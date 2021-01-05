@@ -31,6 +31,11 @@ class App extends Component {
     }) ;
   }
 
+  degChangeHandler = (e) => {
+    const degree = e.target.value ;
+    this.setState({deg: degree}) ;
+  }
+
 
   render() {
     const property = `linear-gradient(${this.state.deg}deg, ${this.state.colOne}, ${this.state.colTwo})` ;
@@ -47,6 +52,8 @@ class App extends Component {
 
         <Box 
           click={this.displayColor}
+          change={this.degChangeHandler}
+          val={this.state.deg}
           gradientCol={property} />
 
       </div>
